@@ -4,6 +4,13 @@ section .text
 
 global tossCoin
 
+; MWM MWMWMWM MWMWMWM MWMWMWM MWMWMWM MWMWMWM MWMWMWM MWM
+; MWM                                                 MWM
+; MWM Toss Coin                                       MWM
+; MWM toss n coins, returns number of head side       MWM
+; MWM                                                 MWM
+; MWM MWMWMWM MWMWMWM MWMWMWM MWMWMWM MWMWMWM MWMWMWM MWM
+
 tossCoin:
         ; rdi-in = number of total trial
     mov   rcx,rdi    ; rcx = number of total trial
@@ -19,6 +26,7 @@ tossCoin:
         dec   rdi    ; rdi = rdi - 1
         jmp  .loopUntilR8Zero
    .breakR8Zero:
+    xor   rax,rax    ; rax = 0
     mov   rdi,rcx    ; rdi = number of total trial
     and   rcx,3fh    ; rcx = remainder of rcx divided by 64
     mov   al,1
